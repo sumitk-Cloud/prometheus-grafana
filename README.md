@@ -337,8 +337,8 @@ Verify that the target returns to `UP`.
 ### CPU utilization graph
 ![CPU utilization graph](screenshots/IMG1.png)
 
-### Memory and disk utilization panels
-![Memory and disk utilization panels](screenshots/IMG1.png)
+### EC2 Instances
+![EC2 Instances](screenshots/IMG1.png)
 
 ### CPU alert in the firing state
 ![CPU alert in the firing state](screenshots/IMG1.png)
