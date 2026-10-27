@@ -329,19 +329,19 @@ Verify that the target returns to `UP`.
 
 
 ### Prometheus targets showing monitored servers
-![ Prometheus targets showing monitored servers](screenshots/IMG1.png)
+![ Prometheus targets showing monitored servers](screenshots/img1.png)
 
 ### Grafana infrastructure dashboard
-![ Grafana infrastructure dashboard](screenshots/IMG1.png)
+![ Grafana infrastructure dashboard](screenshots/img2.png)
 
 ### CPU utilization graph
-![CPU utilization graph](screenshots/IMG1.png)
+![CPU utilization graph](screenshots/img3.png)
 
 ### EC2 Instances
-![EC2 Instances](screenshots/IMG1.png)
+![EC2 Instances](screenshots/img4.png)
 
 ### CPU alert in the firing state
-![CPU alert in the firing state](screenshots/IMG1.png)
+![CPU alert in the firing state](screenshots/img5.png)
 
 
 ```
