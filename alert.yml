@@ -1,0 +1,26 @@
+groups:
+  - name: infrastructure-alerts
+    rules:
+      - alert: HighCPUUsage
+        expr: |
+          100 * (1 - avg by (instance, server) (
+            rate(node_cpu_seconds_total{
+              mode="idle",
+              job=~"app-server-.*"
+            }[5m])
+          )) > 70
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High CPU usage on {{ $labels.server }}"
+          description: "CPU usage has exceeded 70% for at least 2 minutes."
+
+      - alert: NodeExporterDown
+        expr: up{job=~"app-server-.*"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Server monitoring target is down"
+          description: "Prometheus cannot scrape {{ $labels.instance }}."
