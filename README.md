@@ -382,7 +382,7 @@ Verify that the target returns to `UP`.
 ![CPU utilization graph](screenshots/img3.png)
 
 ### EC2 Instances
-![EC2 Instances](screenshots/img4.png)
+![EC2 Instances](screenshots/im1.png)
 
 ### CPU alert in the firing state
 ![CPU alert in the firing state](screenshots/img5.png)
