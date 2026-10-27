@@ -20,7 +20,51 @@ The project demonstrates practical skills in cloud infrastructure, Linux adminis
 
 ## 🏗️ Architecture
 
-The project uses three EC2 instances.
+                   AWS CLOUD
+        ┌──────────────────────────────────────┐
+        │                VPC                   │
+        │                                      │
+        │   ┌──────────────────────────────┐   │
+        │   │       Monitoring EC2         │   │
+        │   │                              │   │
+        │   │        ┌────────────┐        │   │
+        │   │        │ Prometheus │        │   │
+        │   │        │  :9090     │        │   │
+        │   │        └─────┬──────┘        │   │
+        │   │              │               │   │
+        │   │      ┌───────▼────────┐      │   │
+        │   │      │ Alert Rules    │      │   │
+        │   │      │ CPU / Server   │      │   │
+        │   │      └────────────────┘      │   │
+        │   │                              │   │
+        │   │        ┌────────────┐        │   │
+        │   │        │  Grafana   │        │   │
+        │   │        │   :3000    │        │   │
+        │   │        └──────┬─────┘        │   │
+        │   └───────────────┼──────────────┘   │
+        │                   │                  │
+        │          Monitoring Dashboard        │
+        │                                      │
+        │     Prometheus scrapes metrics       │
+        │              ▲       ▲               │
+        │              │       │               │
+        │    ┌─────────┘       └─────────┐     │
+        │    │                           │     │
+        │ ┌──┴────────────┐  ┌───────────┴──┐  │
+        │ │  App EC2 1    │  │  App EC2 2   │  │
+        │ │               │  │              │  │
+        │ │ Node Exporter │  │Node Exporter │  │
+        │ │    :9100      │  │   :9100      │  │
+        │ │               │  │              │  │
+        │ │ CPU / RAM /   │  │ CPU / RAM /  │  │
+        │ │ Disk Metrics  │  │ Disk Metrics │  │
+        │ └───────────────┘  └──────────────┘  │
+        │                                      │
+        └──────────────────────────────────────┘
+                         │
+                         ▼
+               User Web Browser
+             Grafana Dashboard :3000
 
 ### 1. Monitoring Server
 - AWS EC2 running Ubuntu Linux
