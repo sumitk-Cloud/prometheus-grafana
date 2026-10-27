@@ -388,9 +388,8 @@ Verify that the target returns to `UP`.
 ![CPU alert in the firing state](screenshots/img5.png)
 
 
-```
 
-## 🎓 Learning Outcomes
+### 🎓 Learning Outcomes
 
 Through this project, I developed practical experience in:
 
@@ -425,3 +424,4 @@ Through this project, I developed practical experience in:
 ---
 
 If you find this project useful, consider giving the repository a star.
+
